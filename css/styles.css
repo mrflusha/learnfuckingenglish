@@ -1,0 +1,711 @@
+﻿@font-face {
+    font-family: 'Noto'; /* Гарнитура шрифта */
+    src: url('../fonts/Noto_Color_Emoji/NotoColorEmoji-Regular.ttf'); /* Путь к файлу со шрифтом */
+ }
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+	overflow: hidden;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently*/
+
+
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	font-family: 'Arial Rounded MT Bold', 'Helvetica Neue', system-ui, sans-serif;
+	justify-content: space-around;
+	width: 100vw;
+	height: 100vh;
+	align-items: center;
+	overflow: hidden;
+	                        background: linear-gradient(145deg, #FF8A5C, #FF4D6D);
+            box-shadow: 0 24px 48px rgba(255, 77, 109, 0.4);
+}
+
+#body{
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+		width: 100vw;
+	height: 95vh;
+
+}
+#LOL{
+
+	display: flex;
+	overflow: hidden;
+	position: fixed;
+
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: #FFF;
+	z-index: 5;
+	color: GREEN;
+	flex-direction: column;
+	font-family: 'Noto', sans-serif;
+	font-size: 6vh;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently*/
+
+}
+
+.spinner {
+    height: 0.7em;
+    width: 0.7em;
+    border-left: 0.7vh solid greenyellow;
+    border-bottom: 0.7vh solid greenyellow;
+    border-right: 0.7vh solid greenyellow;
+    border-top: 0.7vh solid transparent;
+    border-radius: 50vh;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+ 
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+#buttons{
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 10vh;
+}
+
+.button{
+
+	display: flex;
+
+	background: #2C3E50;
+	box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      color: #FFFFFF; 
+    border: 0.2px solid #AACBD2;
+    border-radius: 4em;
+    font-size: 12vmin;
+    font-family: motley;
+
+    cursor: pointer;
+    width: 20vw;
+    margin-right: 5px;
+
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+
+    
+     -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently*/
+}
+
+
+#ask{
+
+    	/*safari shit*/
+    cursor: default;
+
+	
+
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 21vmin;
+	border: 0.1vh solid #B2AE79;
+	border-radius: 1vh;
+	width: 85vw;
+	height: 45vh;
+            font-family: "Noto";
+	
+            color: #fff;
+            text-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background-color: #2C3E50;
+  backdrop-filter: blur(8px);
+
+	margin-bottom: 10vh;
+
+	
+	
+}
+
+
+#score_board{
+	font-size: 5vmin;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 95vw;
+	  color: #fff;
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Neue', sans-serif;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+#header{
+	display: flex;
+	font-size: 5vmin;
+	            font-family: 'Arial Rounded MT Bold', 'Helvetica Neue', system-ui, sans-serif;
+	
+            color: #fff;
+            text-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#back_button{
+	  /* Содержимое (символ "<") */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3vmin;
+
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+
+  /* Поведение */
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+
+    border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Эффект при наведении (для мыши) */
+#back_button:hover {
+
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Эффект при нажатии */
+#back_button:active {
+  
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* Адаптация для маленьких экранов (если нужно) */
+@media (max-width: 480px) {
+  #back_button {
+    top: 16px;
+    left: 16px;
+    width: 56px;
+    height: 56px;
+    font-size: 30px;
+  }
+}
+/* Контейнер-обёртка — центрирует меню */
+#menu-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2vmin; /* небольшой отступ от краёв */
+  box-sizing: border-box;
+}
+
+/* Само меню — все размеры в vmin */
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5vmin;        /* отступ между кнопками */
+  padding: 2.5vmin;    /* внутренний отступ меню */
+  width: 100%;
+  max-width: 70vmin;   /* максимальная ширина — 70% от меньшей стороны */
+  box-sizing: border-box;
+}
+
+/* Базовые стили для всех кнопок меню */
+#menu button {
+  width: 100%;
+  padding: 2.2vmin 3.5vmin;  /* отступы внутри кнопок */
+  border: none;
+  border-radius: 8vmin;      /* сильное скругление */
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Neue', system-ui, sans-serif;
+  font-size: 2vmin;        /* размер шрифта — динамический */
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 0.2vmin 0.8vmin rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.2vmin;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 1vmin 3vmin rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 0.2vmin solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;        /* текст никогда не переносится */
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  min-height: 8vmin;          /* минимальная высота для удобства нажатия */
+}
+
+/* Эффекты при наведении (для мыши) */
+#menu button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 1.5vmin 4.5vmin rgba(0, 0, 0, 0.25);
+  filter: brightness(1.05);
+}
+
+/* Эффекты при нажатии */
+#menu button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0.5vmin 1.5vmin rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Индивидуальные цвета для каждой кнопки ---- */
+
+/* Кнопка "Числа по порядку" — голубой */
+#order_select {
+  background: rgba(79, 195, 247, 0.35);
+  border-color: rgba(79, 195, 247, 0.6);
+}
+
+/* Кнопка "Случайные числа" — жёлтый */
+#random_select {
+  background: rgba(255, 215, 0, 0.35);
+  border-color: rgba(255, 215, 0, 0.6);
+  color: #3E2C00;
+  text-shadow: 0 0.2vmin 0.4vmin rgba(255, 215, 0, 0.3);
+}
+
+/* Кнопка "Отключить рекламу" — зелёный с пульсацией */
+#buy_subscribe {
+  background: rgba(102, 187, 106, 0.4);
+  border-color: rgba(102, 187, 106, 0.7);
+  box-shadow: 0 1vmin 4vmin rgba(102, 187, 106, 0.3);
+  animation: pulse-glow 2s ease-in-out infinite;
+
+  /* Убираем font-size: 1vmin — наследуем общий размер */
+  /* Если хотите чуть уменьшить, можно задать, например: */
+  font-size: 1vmin; /* чуть меньше общего 4.5vmin */
+
+  /* Для длинного текста разрешаем перенос, чтобы не вылезал */
+  white-space: normal;      /* разрешаем перенос */
+  word-break: break-word;   /* переносим длинные слова, если нужно */
+  text-align: center;
+  line-height: 1.3;         /* комфортная высота строки */
+  padding: 2.2vmin 2vmin;   /* можно чуть уменьшить горизонтальные отступы */
+  margin-top: 5vh;
+}
+
+/* Звёздочка перед текстом кнопки подписки */
+#buy_subscribe::before {
+  content: "★ ";
+  color: #FFD700;
+  text-shadow: 0 0 1.5vmin #FFD700;
+
+}
+
+/* Анимация пульсации */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 1vmin 4vmin rgba(102, 187, 106, 0.3); }
+  50% { box-shadow: 0 1vmin 6vmin rgba(102, 187, 106, 0.7); }
+}
+
+#lang {
+  background: rgba(156, 39, 176, 0.35);
+  border-color: rgba(156, 39, 176, 0.6);
+  color: #FFFFFF;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+#rw_button {
+  background: rgba(255, 152, 0, 0.35); /* оранжевый с прозрачностью */
+  border-color: rgba(255, 152, 0, 0.7);
+  box-shadow: 0 1vmin 4vmin rgba(255, 152, 0, 0.3);
+  color: #FFFFFF;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-size: clamp(2.8vmin, 3.8vmin, 4.5vmin); /* адаптивный размер */
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
+  line-height: 1.3;
+  padding: 2.2vmin 1.8vmin;
+  animation: pulse-glow-orange 2s ease-in-out infinite;
+}
+
+/* Добавляем иконку перед текстом */
+#rw_button::before {
+  content: "🎬 ";
+  font-size: 1.2em;
+  text-shadow: 0 0 12px rgba(255, 152, 0, 0.6);
+}
+
+/* Анимация пульсации для привлечения внимания */
+@keyframes pulse-glow-orange {
+  0%, 100% { box-shadow: 0 1vmin 4vmin rgba(255, 152, 0, 0.3); }
+  50% { box-shadow: 0 1vmin 7vmin rgba(255, 152, 0, 0.7); }
+}
+
+
+
+/* ---- Кнопка #rw_button ---- */
+#rw_button {
+  display: inline-block;
+  padding: 2.2vmin 3.5vmin;                /* отступы в vmin */
+  background: rgba(255, 152, 0, 0.35);
+  backdrop-filter: blur(8px);
+  border: 0.2vmin solid rgba(255, 152, 0, 0.7);
+  border-radius: 8vmin;                    /* скругление в vmin */
+  color: #fff;
+  font-size: clamp(3vmin, 4.5vmin, 6vmin); /* адаптивный шрифт */
+  font-weight: 700;
+  text-shadow: 0 0.2vmin 0.8vmin rgba(0,0,0,0.2);
+  box-shadow: 0 1vmin 4vmin rgba(255, 152, 0, 0.3);
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+  font-family: inherit;
+  animation: pulse-glow-orange 2s ease-in-out infinite;
+  min-height: 6vmin;                       /* минимальная высота */
+  line-height: 1.2;
+  white-space: normal;
+  word-break: break-word;
+}
+#rw_button:hover {
+  transform: scale(1.05);
+  background: rgba(255, 152, 0, 0.55);
+}
+#rw_button::before {
+  content: "🎬 ";
+  font-size: 1.2em; /* относительно текущего шрифта */
+}
+
+/* ---- Модальное окно ---- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  display: none;          /* по умолчанию скрыто (JS добавит .active) */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 4vmin;         /* отступы от краёв */
+  box-sizing: border-box;
+}
+.modal.active {
+  display: flex;
+}
+
+/* Контент модального окна */
+.modal-content {
+  background: #fff;
+  border-radius: 8vmin;   /* скругление в vmin */
+  padding: 5vmin 6vmin;   /* отступы в vmin */
+  max-width: 70vmin;      /* максимальная ширина в vmin */
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2vmin 6vmin rgba(0,0,0,0.4);
+  animation: popIn 0.3s ease;
+  position: relative;
+  box-sizing: border-box;
+}
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Заголовок и текст внутри модалки */
+.modal-content h2 {
+  font-size: clamp(4vmin, 6vmin, 8vmin); /* адаптивный */
+  margin: 0 0 2vmin 0;
+  color: #333;
+  font-weight: 800;
+}
+.modal-content p {
+  font-size: clamp(2.8vmin, 4vmin, 5vmin);
+  color: #555;
+  margin: 0 0 4vmin 0;
+  line-height: 1.4;
+}
+
+/* Кнопки внутри модального окна */
+.modal-actions {
+  display: flex;
+  gap: 2vmin;              /* отступ между кнопками в vmin */
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.btn {
+  padding: 2vmin 4vmin;    /* отступы в vmin */
+  border-radius: 6vmin;    /* скругление в vmin */
+  font-size: clamp(2.4vmin, 3.5vmin, 4.5vmin);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  min-width: 20vmin;       /* минимальная ширина в vmin */
+  min-height: 5vmin;       /* минимальная высота */
+  box-sizing: border-box;
+}
+.btn-cancel {
+  background: #e8e8e8;
+  color: #333;
+}
+.btn-cancel:hover { background: #d5d5d5; }
+.btn-confirm {
+  background: #FF4D6D;
+  color: #fff;
+  box-shadow: 0 1vmin 3vmin rgba(255,77,109,0.3);
+}
+.btn-confirm:hover {
+  background: #e63e5e;
+  transform: scale(1.04);
+}
+
+/* Крестик закрытия */
+.close-modal {
+  position: absolute;
+  top: 1.5vmin;
+  right: 2.5vmin;
+  font-size: clamp(4vmin, 6vmin, 8vmin);
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.2s;
+  line-height: 1;
+}
+.close-modal:hover {
+  color: #000;
+  transform: rotate(90deg);
+}
+
+/* Анимация пульсации для кнопки #rw_button */
+@keyframes pulse-glow-orange {
+  0%, 100% { box-shadow: 0 1vmin 4vmin rgba(255, 152, 0, 0.3); }
+  50% { box-shadow: 0 1vmin 7vmin rgba(255, 152, 0, 0.7); }
+}
+
+#start_from_0 {
+  /* Размеры в vmin */
+  padding: 1.8vmin 3.5vmin;
+  border-radius: 8vmin;
+  font-size: clamp(2.8vmin, 4vmin, 5.5vmin);
+  font-weight: 700;
+  min-height: 6vmin;
+  min-width: 20vmin;
+
+  /* Стеклянный стиль */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 0.2vmin solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  text-shadow: 0 0.2vmin 0.8vmin rgba(0, 0, 0, 0.2);
+  
+
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap; /* текст в одну строку */
+  font-family: inherit;
+  line-height: 1.2;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Эффект при наведении (для мыши) */
+#start_from_0:hover {
+  transform: scale(1.0);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 1.5vmin 4vmin rgba(0, 0, 0, 0.15);
+}
+
+/* Эффект при нажатии */
+#start_from_0:active {
+  transform: scale(0.94);
+  box-shadow: 0 0.5vmin 1.5vmin rgba(0, 0, 0, 0.1);
+}
+
+/* Можно добавить иконку (например, ⟳) перед текстом, если нужно */
+#start_from_0::before {
+  content: "⟳ ";
+  font-size: 1.1em;
+}
+
+
+#adv_block_flex{
+  display: none;
+
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+    background-color: white;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+#adv_block{
+  display: flex;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Neue', system-ui, sans-serif;
+  font-size: 8vmin;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently*/
+
+}
+
+
+/* ---- Модальное окно ошибки (переиспользуем базовые стили .modal) ---- */
+
+/* Основные стили модального окна уже есть, но добавим специфику для ошибки */
+.modal-error .error-icon {
+  font-size: clamp(8vmin, 12vmin, 16vmin);
+  margin-bottom: 1vmin;
+  display: block;
+  font-family: 'Noto', sans-serif;
+
+}
+
+.modal-error h2 {
+  color: #e74c3c; /* красный оттенок для внимания */
+  font-size: clamp(4vmin, 6vmin, 8vmin);
+  margin: 0 0 1.5vmin 0;
+}
+
+.modal-error p {
+  font-size: clamp(2.8vmin, 4vmin, 5vmin);
+  color: #555;
+  margin: 0 0 4vmin 0;
+  line-height: 1.4;
+}
+
+/* Кнопка "OK" – в стиле игры */
+.btn-primary {
+  background: #FF4D6D;
+  color: #fff;
+  padding: 2vmin 4vmin;
+  border-radius: 6vmin;
+  font-size: clamp(2.4vmin, 3.5vmin, 4.5vmin);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1vmin 3vmin rgba(255,77,109,0.3);
+  transition: 0.2s;
+  min-width: 20vmin;
+  min-height: 5vmin;
+}
+.btn-primary:hover {
+  background: #e63e5e;
+  transform: scale(1.04);
+}
+
+/* Если вы ещё не определили общие стили .modal, вот они (можно добавить в конец CSS) */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 4vmin;
+  box-sizing: border-box;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Neue', system-ui, sans-serif;
+}
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 8vmin;
+  padding: 5vmin 6vmin;
+  max-width: 70vmin;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2vmin 6vmin rgba(0,0,0,0.4);
+  animation: popIn 0.3s ease;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.5vmin;
+  right: 2.5vmin;
+  font-size: clamp(4vmin, 6vmin, 8vmin);
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.2s;
+  line-height: 1;
+}
+.close-modal:hover {
+  color: #000;
+  transform: rotate(90deg);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 2vmin;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#closeErrorModal{
+  display: none;
+}
+#error-icon{
+  display: none;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<script src="createjs.min.js"></script>	
+	<script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+
+</head>
+<body>
+	<div id = 'LOL'>
+		<span class="spinner" display = "none"></span>
+	</div>
+	<div id="menu-wrapper">
+	  <div id="menu">
+	    <button id="order_select">Числа по порядку</button>
+	    <button id="random_select">Случайные числа</button>
+	   <button id="rw_button">Отключить баннер за просмотр видео</button>
+	    <button id="lang">Случайные числа</button>
+	   <button id="buy_subscribe">Отключить рекламу за 1 голос</button>
+	  </div>
+	</div>
+
+
+	<div id = 'body'>
+			<div id="score_board">
+				<button id = 'back_button'><</button>
+				<button id = 'start_from_0'>Начать сначала</button>
+				<div id="current_score">Счёт : 0</div>
+			</div>
+		
+		<div id = 'header'>Какое число тут?</div>
+		<div id = "ask">1</div>
+		<div id = "buttons">	
+			<button class="button"></button>
+			<button class="button"></button>
+			<button class="button"></button>
+		</div>
+	</div>
+
+
+	<div id="confirmModal" class="modal">
+	  <div class="modal-content">
+	    <span class="close-modal" id="closeModalBtn">&times;</span>
+	    <h2 id="modalTitle">Подтверждение</h2>
+	    <p id="modalText">Вы действительно хотите посмотреть видео, чтобы отключить баннер на 30 минут?</p>
+	    <div class="modal-actions">
+	      <button class="btn btn-cancel" id="cancelBtn">Нет</button>
+	      <button class="btn btn-confirm" id="confirmBtn">Да, смотреть</button>
+	    </div>
+	  </div>
+	</div>
+	<div id="toastMessage" style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.8); color:#fff; padding:2vmin 4vmin; border-radius:6vmin; font-size:clamp(2.5vmin, 4vmin, 5vmin); z-index:2000;"></div>
+
+
+		<!-- Модальное окно ошибки видео -->
+	<div id="videoErrorModal" class="modal">
+	  <div class="modal-content modal-error">
+	    <span class="close-modal" id="closeErrorModal"></span>
+	    <div class="error-icon" id = 'error-icon'>⚠️</div>
+	    <h2 id="errorTitle">Видео недоступно</h2>
+	    <p id="errorMessage">К сожалению, видеореклама сейчас не загружается.<br>Пожалуйста, попробуйте позже.</p>
+	    <div class="modal-actions">
+	      <button class="btn btn-primary" id="errorOkBtn">OK</button>
+	    </div>
+	  </div>
+	</div>
+	<div id = "adv_block_flex">
+		<div id="adv_block"></div>
+	</div>
+
+	<script type="text/javascript" src="preload.js"></script>
+	<script type="text/javascript" src="time.js"></script>
+	<script type="text/javascript" src="vk.js"></script>
+	<script type="text/javascript" src="init.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="generate.js"></script>
+</body>
+</html>
