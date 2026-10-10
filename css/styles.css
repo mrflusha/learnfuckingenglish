@@ -723,3 +723,13 @@ body{
   border-color: rgba(255, 152, 0, 0.7);
   /* ... и так далее */
 }
+
+
+#timer{
+  display: none;
+  font-size: 2vmin;           
+
+  background: rgba(255, 152, 0, 0.35);
+  border-color: rgba(255, 152, 0, 0.7);
+  
+}
